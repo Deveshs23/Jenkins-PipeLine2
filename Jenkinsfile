@@ -18,8 +18,7 @@ pipeline {
         stage('Slack Notification')
         {
             steps{
-            slackSend channel: 'ot-ninja-batch-5', color: 'green', iconEmoji: '', message: 'Going to start Deployment', tokenCredentialId: 'MEhmTzCjD8CHkUmva43pSUpM','Slack_Notification', username: ''
-                }
+            slackSend color: 'green', iconEmoji: '', message: 'Devesh Going To Start Deployment', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                }
                 
             }
         stage('Input Process')
@@ -79,8 +78,7 @@ pipeline {
         stage('Slack Final Notification')
         {
             steps{
-                slackSend channel: 'ot-ninja-batch-5', color: 'green', iconEmoji: '', message: 'Hurray', tokenCredentialId: 'Slack_Notification', username: ''
-                
+                slackSend color: 'green', iconEmoji: '', message: 'Hurry', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                
             }
         }
         
