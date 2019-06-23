@@ -12,14 +12,13 @@ pipeline {
         stage('Email Notification')
         {
             steps{
-            emailext body: 'Hello Please Start ', recipientProviders: [developers()], subject: 'Jenkins_Ninja', to: 'deveshs2221@gmail.com'
-                }
+            mail bcc: '', body: 'Going to Start Deployment', cc: '', from: '', replyTo: '', subject: 'Opstree_Ninja', to: 'deveshs2221@gmail.com'                }
                 
             }
         stage('Slack Notification')
         {
             steps{
-            slackSend channel: 'ot-ninja-batch-5', color: 'green', iconEmoji: '', message: 'Going to start Deployment', tokenCredentialId: 'Slack_Notification', username: ''
+            slackSend channel: 'ot-ninja-batch-5', color: 'green', iconEmoji: '', message: 'Going to start Deployment', tokenCredentialId: 'MEhmTzCjD8CHkUmva43pSUpM','Slack_Notification', username: ''
                 }
                 
             }
