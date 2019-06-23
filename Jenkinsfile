@@ -9,15 +9,15 @@ pipeline {
             sh 'rm -rf spring3hibernate;  git clone https://github.com/Deveshs23/spring3hibernate.git'
             }
         }
-        stage('Email Notification')
-        {
-            steps{
+   //     stage('Email Notification')
+     //   {
+      //      steps{
            // mail bcc: '', body: 'Going to Start Deployment', cc: '', from: '', replyTo: '', subject: 'Opstree_Ninja', to: 'deveshs2221@gmail.com'                }
            //  mail bcc: '', body: 'Hacker One', cc: '', from: '', replyTo: '', subject: 'Daily_report', to: 'deveshs23@gmail.com'   
             //mail bcc: '', body: 'Hacker One', cc: '', from: '', replyTo: '', subject: 'Daily_report', to: 'devesh.sharma@mygurukulam.org'
-            mail bcc: '', body: 'Going to Start Deployment', cc: '', from: '', replyTo: '', subject: 'Opstree_Ninja', to: 'deveshs23@gmail.com'
-            }
-        }
+        //    mail bcc: '', body: 'Going to Start Deployment', cc: '', from: '', replyTo: '', subject: 'Opstree_Ninja', to: 'deveshs23@gmail.com'
+      //      }
+      //  }
         stage('Slack Notification')
         {
             steps{
