@@ -10,7 +10,7 @@ pipeline {
        stage('Email Notification')
         {
             steps{
-            mail bcc: '', body: 'Devesh going to deploy', cc: '', from: '', replyTo: '', subject: 'test', to: 'abhisheksachaneee@gmail.com'
+            mail bcc: '', body: 'Devesh going to deploy', cc: '', from: 'deveshs2221@gmail.com', replyTo: '', subject: 'test', to: 'abhisheksachaneee@gmail.com'
            }
        }
         stage('Slack Notification')
