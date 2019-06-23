@@ -71,6 +71,7 @@ pipeline {
         stage('deploy war file in tomcat')
         {
             steps{
+                sh 'rm -f Spring3HibernateApp.war'
                 sh 'cd spring3hibernate; cd target; cp Spring3HibernateApp.war /var/lib/tomcat8/webapps/'
             }    
         }
@@ -88,12 +89,12 @@ pipeline {
 
 post {
    success {
-     slackSend color: 'green', iconEmoji: '', message: 'Deployment Successful', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                
-            }
+      slackSend color: 'green', iconEmoji: '', message: 'Deployment Success', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                
+                  }
 
 failure {
-    slackSend color: 'green', iconEmoji: '', message: 'Deployment fail', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                
-            
+      slackSend color: 'green', iconEmoji: '', message: 'Deployment Failure', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                
+                  
 }
 }
 
