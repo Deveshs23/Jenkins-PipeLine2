@@ -34,7 +34,7 @@ pipeline {
         stage('Code quality')
        {
           steps{
-          input 'Enter Your Input: '
+         // input 'Enter Your Input: '
           sh 'cd spring3hibernate; mvn checkstyle:checkstyle'
         //  checkstyle()
             }
