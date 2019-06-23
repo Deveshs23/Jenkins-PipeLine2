@@ -52,7 +52,7 @@ pipeline {
                sh 'cd spring3hibernate'
                findbugs canComputeNew: false, defaultEncoding: '', excludePattern: '', healthy: '', includePattern: '', pattern: '', unHealthy: ''
                checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: '80'
-               publishCoverage adapters: [coberturaAdapter('target/site/cobertura/coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')
+               publishCoverage adapters: [coberturaAdapter('spring3hibernate/target/site/cobertura/coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')
                 //  cobertura()
                 }
          }        
