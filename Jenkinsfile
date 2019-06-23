@@ -90,7 +90,7 @@ post {
    success {
      slackSend color: 'green', iconEmoji: '', message: 'Deployment Successful', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                
             }
-}
+
 failure {
     slackSend color: 'green', iconEmoji: '', message: 'Deployment fail', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                
             
