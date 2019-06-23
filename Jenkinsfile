@@ -15,6 +15,7 @@ pipeline {
            // mail bcc: '', body: 'Going to Start Deployment', cc: '', from: '', replyTo: '', subject: 'Opstree_Ninja', to: 'deveshs2221@gmail.com'                }
              mail bcc: '', body: 'Hacker One', cc: '', from: '', replyTo: '', subject: 'Daily_report', to: 'deveshs23@gmail.com'   
             }
+        }
         stage('Slack Notification')
         {
             steps{
