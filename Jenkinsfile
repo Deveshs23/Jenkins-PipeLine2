@@ -10,7 +10,7 @@ pipeline {
        stage('Email Notification')
         {
             steps{
-            mail bcc: '', body: 'Devesh going to deploy', cc: '', from: 'deveshs2221@gmail.com', replyTo: '', subject: 'test', to: 'abhisheksachaneee@gmail.com'
+            mail bcc: '', body: 'Devesh going to deploy', cc: '', from: 'deveshs2221@gmail.com', replyTo: '', subject: 'test', to: 'deveshs23@gmail.com'
            }
        }
         stage('Slack Notification')
@@ -71,12 +71,13 @@ pipeline {
         stage('deploy war file in tomcat')
         {
             steps{
-                sh 'cd spring3hibernate; cp /target/Spring3HibernateApp.war /var/lib/tomcat8/webapps/'
+                sh 'cd spring3hibernate; cd target; cp Spring3HibernateApp.war /var/lib/tomcat8/webapps/'
             }    
         }
         stage('Slack Final Notification')
         {
             steps{
+                
                 slackSend color: 'green', iconEmoji: '', message: 'Hurry', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                
             }
         }
@@ -84,5 +85,15 @@ pipeline {
          }
 
       }
-        
+
+post {
+   success {
+     slackSend color: 'green', iconEmoji: '', message: 'Deployment Successful', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                
+            }
+}
+failure {
+    slackSend color: 'green', iconEmoji: '', message: 'Deployment fail', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                
+            
+}
+}
 
