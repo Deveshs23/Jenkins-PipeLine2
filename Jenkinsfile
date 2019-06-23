@@ -85,7 +85,7 @@ pipeline {
         
          }
 
-      }
+      
 
 post {
    success {
@@ -95,6 +95,7 @@ post {
 failure {
       slackSend color: 'green', iconEmoji: '', message: 'Deployment Failure', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                
                   
-}
-}
+        }
+    }
 
+}
