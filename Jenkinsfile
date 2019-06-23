@@ -72,7 +72,7 @@ pipeline {
         {
             steps{
                 sh 'rm -f Spring3HibernateApp.war'
-                sh 'cd spring3hibernate; cd target; cp Spring3HibernateApp.war /var/lib/tomcat8/webapps/'
+                sh 'cd spring3hibernate; cd target; sudo cp Spring3HibernateApp.war /var/lib/tomcat8/webapps/'
             }    
         }
         stage('Slack Final Notification')
