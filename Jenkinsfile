@@ -13,12 +13,12 @@ pipeline {
             mail bcc: '', body: 'Devesh going to deploy', cc: '', from: 'deveshs2221@gmail.com', replyTo: '', subject: 'test', to: 'deveshs23@gmail.com'
            }
        }
-        stage('Slack Notification')
-        {
-            steps{
-            slackSend color: 'green', iconEmoji: '', message: 'Devesh Going To Start Deployment', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                }
+      //  stage('Slack Notification')
+        //{
+        //    steps{
+          //  slackSend color: 'green', iconEmoji: '', message: 'Devesh Going To Start Deployment', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                }
                 
-            }
+           // }
         stage('Input Process')
         {
             steps{
@@ -89,12 +89,15 @@ pipeline {
 
 post {
    success {
-      slackSend color: 'green', iconEmoji: '', message: 'Deployment Success', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                
-                  }
+      //slackSend color: 'green', iconEmoji: '', message: 'Deployment Success', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                
+      mail bcc: '', body: 'Deployment Success', cc: '', from: 'deveshs2221@gmail.com', replyTo: '', subject: 'test', to: 'deveshs23@gmail.com'
+              
+   }
 
 failure {
-      slackSend color: 'green', iconEmoji: '', message: 'Deployment Failure', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                
-                  
+      //slackSend color: 'green', iconEmoji: '', message: 'Deployment Failure', teamDomain: 'opstree', tokenCredentialId: 'Slack_Notification', username: ''                
+        mail bcc: '', body: 'Deployment failure', cc: '', from: 'deveshs2221@gmail.com', replyTo: '', subject: 'test', to: 'deveshs23@gmail.com'
+                   
         }
     }
 
